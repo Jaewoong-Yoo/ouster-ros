@@ -1,0 +1,31 @@
+<launch>
+
+  <!-- Hardware -->
+  <arg name="hardware_enable" default="true" />
+
+  <!-- Left-->
+  <!-- <group ns="ouster_left">
+    <include file="$(find ouster_ros)/launch/sensor_instance.launch" if="$(arg hardware_enable)">
+      <arg name="tf_prefix" value="lidar_front_left" doc="as frame_id" />
+      <arg name="sensor_hostname" value="os-992124000054.local" />
+      <arg name="udp_dest" value="11.11.50.66" />
+      <arg name="lidar_port" value="7506" />
+      <arg name="imu_port" value="757" />
+    </include>
+  </group> -->
+
+  <!-- Right -->
+  <!-- <group ns="ouster_right">
+    <include file="$(find ouster_ros)/launch/sensor_instance.launch" if="$(arg hardware_enable)">
+      <arg name="tf_prefix" value="lidar_front_right" doc="as frame_id" />
+      <arg name="sensor_hostname" value="os-992118000048.local" />
+      <arg name="udp_dest" value="11.11.50.66" />
+      <arg name="lidar_port" value="7508" />
+      <arg name="imu_port" value="7509" />
+    </include>
+  </group> -->
+
+  <include file="$(find ouster_ros)/launch/sensor_left.launch" />
+  <include file="$(find ouster_ros)/launch/sensor_right.launch" />
+
+</launch>
